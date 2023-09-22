@@ -98,3 +98,79 @@ function modLocalVar() {
     let locVar = 5;
     locVar = 4;
 }
+
+
+
+
+
+
+
+
+
+//week 4 exercises
+const global2 = function global2() {
+    console.log(this);
+}
+global2();
+const user = {
+    object1: 1,
+    object2: function objmeth() {
+        console.log(this);
+        const arrow = () => {
+            console.log(this);
+        }
+        arrow();
+    }
+
+}
+user.object2();
+
+
+//2 & 3
+class Person {
+    
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    greet(greeting) {
+        console.log(`${greeting} ${this.name}!`);
+    }
+    //4
+    info() {
+        return("this is a Person class")
+    }
+    //info();
+    //writing info(); normally would call on the function but in a class it makes the function/method
+    //5
+    get newAge() {
+        return age;
+    }
+    set newAge(x) {
+        if (x < 0) {
+            console.log("that's not how age work you silly");
+        } else {
+            this.age = x;
+            console.log(this.age);
+        }
+        
+    }
+}
+const person1 = new Person("american", 33);
+person1.greet("hello");
+const person2 = new Person("mexican", 69);
+person2.greet("hola");
+person2.info();
+
+person2.newAge = -69;
+class Student {
+    constructor(name, grades) {
+        this.name = name;
+        this.grades = grades;
+    }
+    
+}
+
+
+
+
